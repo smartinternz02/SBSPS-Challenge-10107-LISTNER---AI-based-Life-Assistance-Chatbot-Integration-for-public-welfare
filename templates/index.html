@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Chat-Bot 
+        </title>
+        <style>
+            /* CSS code */
+            .styled-div {
+                background-color: rgb(32, 152, 192);
+                color: white;
+                padding: 20px;
+            }
+            img {
+                width: auto;
+                height: auto;
+                object-fit: cover;
+            }
+            /* Added styles for navigation */
+            .navbar {
+                background-color: #333;
+                overflow: hidden;
+            }
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            .navbar a:hover {
+                background-color: rgb(32, 152, 192);
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <a class=" " href="{{ url_for('about') }}" > about</a>
+            <a class=" " href="{{ url_for('contact') }}" >contact </a>
+            <a class=" " href="{{ url_for('login') }}" > login</a>
+            <a class=" " href="{{ url_for('signup') }}" > signup</a> 
+        </div>
+
+        <!-- Image -->
+        <img src="{{ url_for('static', filename='jonatan-pie-3l3RwQdHRHg-unsplash.jpg') }}" alt="Your Image">
+
+        <div id="home" class="styled-div">
+            <!-- Home content goes here -->
+            <h2>Home</h2>
+            <p>Welcome to our website! This is the home section.</p>
+        </div>
+
+        <div id="about" class="styled-div">
+            <!-- About content goes here -->
+            <h2>About</h2>
+            <p>Learn more about us and what we do.</p>
+        </div>
+
+        <div id="contact" class="styled-div">
+            <!-- Contact Us content goes here -->
+            <h2>Contact Us</h2>
+            <p>Get in touch with us.</p>
+        </div>
+
+        <div id="signup" class="styled-div">
+            <!-- Sign Up content goes here -->
+            <h2>Sign Up</h2>
+            <p>Create an account to access exclusive features.</p>
+        </div>
+
+        <div id="login" class="styled-div">
+            <!-- Login content goes here -->
+            <h2>Login</h2>
+            <p>Already have an account? Log in here.</p>
+        </div>
+
+        <script>
+            window.watsonAssistantChatOptions = {
+              integrationID: "5ddabc73-8ab4-4b50-8117-7554163d10c3", // The ID of this integration.
+              region: "au-syd", // The region your integration is hosted in.
+              serviceInstanceID: "79d146c0-8480-4a5b-a965-321b4dbf031c", // The ID of your service instance.
+              onLoad: function(instance) { instance.render(); }
+            };
+            setTimeout(function(){
+              const t=document.createElement('script');
+              t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+              document.head.appendChild(t);
+            });
+        </script>
+    </body>
+</html>
